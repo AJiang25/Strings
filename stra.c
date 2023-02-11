@@ -37,7 +37,7 @@ char *Str_concat(char pcDest[], const char pcSrc[]) {
         pcDest[j] = pcSrc[i];
         i++;
     }
-    pcDest[lastIndex] = '\n';
+    pcDest[j] = '\0';
     return pcDest;
 }
 
