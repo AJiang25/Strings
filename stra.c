@@ -69,7 +69,7 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
    assert(pcHaystack != NULL);
    assert(pcNeedle != NULL);
    if (needleLen == 0) {
-        return pc;
+        return (char*)pc;
    }
    for (i = 0; i < haystackLen; i++) {
         if (pcHaystack[i] == pcNeedle[0]) {
