@@ -15,7 +15,6 @@ size_t Str_getLength(const char pcSrc[]) {
 }
 
 char *Str_copy(char pcDest[], const char pcSrc[]) {
-    size_t length = Str_getLength(pcSrc);
     size_t i = 0;
     assert(pcSrc != NULL);
     assert(pcDest != NULL);
@@ -30,11 +29,12 @@ char *Str_copy(char pcDest[], const char pcSrc[]) {
 char *Str_concat(char pcDest[], const char pcSrc[]) {
     size_t lastIndex = Str_getLength(pcDest);
     size_t totalLength = lastIndex + Str_getLength(pcSrc);
-    size_t i = 0; 
+    size_t i = 0;
+    size_t j; 
     assert(pcSrc != NULL);
     assert(pcDest != NULL);
-    for (lastIndex; lastIndex < totalLength; lastIndex++) {
-        pcDest[lastIndex] = pcSrc[i];
+    for (j = lastIndex; j < totalLength; j++) {
+        pcDest[j] = pcSrc[i];
         i++;
     }
     pcDest[lastIndex] = '\n';
