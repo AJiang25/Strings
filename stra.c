@@ -79,6 +79,7 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
                     break;
                 }
             }
+            pc++;
             if (j == needleLen) {
                 return (char*)pc;
             }
