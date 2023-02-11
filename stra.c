@@ -53,7 +53,7 @@ size_t Str_compare(const char Str2[], const char Str1[]) {
     else
         max = str2Length;
     for (i = 0; i < max; i++){
-        int diff = Str2[i] - Str1[i];
+        size_t diff = (size_t) (Str2[i] - Str1[i]);
         if (diff != 0) {
             return diff;
         }
