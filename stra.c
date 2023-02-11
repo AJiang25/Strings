@@ -25,7 +25,7 @@ char *Str_copy(char pcDest[], const char pcSrc[]) {
     return pcDest;
 }
 
-char * Str_concat(char pcDest[], const char pcSrc[]) {
+char *Str_concat(char pcDest[], const char pcSrc[]) {
     size_t lastIndex = Str_getLength(pcDest);
     size_t totalLength = lastIndex + Str_getLength(pcSrc);
     int i = 0; 
@@ -59,8 +59,28 @@ size_t Str_compare(const char Str2[], const char Str1[]) {
     return 0;
 }
 
-char *Str_search(const char *pcHaystack, const char *pcNeedle) {
+char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
    const char* pc = pcHaystack;
-    /* Increment pc so it points to the appropriate character. */
-   return (char*)pc;
+   int i;
+   size_t haystackLen = Str_getLength(pcHaystack);
+   size_t needleLen = Str_getLength(pcNeedle);
+   assert(pcHaystack != NULL);
+   assert(pcNeedle != NULL);
+   if (needleLen == 0) {
+        return pc;
+   }
+   for (i = 0; i < haystackLen; i++) {
+        if (pcHaystack[i] == pcNeedle[0]) {
+            int j;
+            for (j = 0; j < needleLen; j++) {
+                if (pcHaystack[i + j] != pcNeedle[j]) {
+                    break;
+                }
+            }
+            if (j == needleLen) {
+                return (char*)pc;
+            }
+        }
+   }
+   return NULL;
 }

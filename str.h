@@ -14,6 +14,9 @@ size_t Str_getLength(const char pcSrc[]);
 char *Str_copy(char pcDest[], const char pcSrc[]);
 
 /* */
+char *Str_copy(char* pcDest, const char* pcSrc);
+
+/* */
 char * Str_concat(char pcDest[], const char pcSrc[]);
 
 /* */
