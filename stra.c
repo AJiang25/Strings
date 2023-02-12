@@ -72,20 +72,17 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
         return (char*)pc;
    }
    for (i = 0; i < haystackLen; i++) {
-    /* 
-      if (pcHaystack[i] == pcNeedle[0]) {
-    */
-            size_t j;
-            for (j = 0; j < needleLen; j++) {
-                if (pcHaystack[i + j] != pcNeedle[j]) {
-                    break;
-                }
+        size_t j;
+        for (j = 0; j < needleLen; j++) {
+            if (pcHaystack[i + j] != pcNeedle[j]) {
+                break;
             }
-            /* ask how to increment a const pointer */
-            if (j == needleLen) {
-                pc = &pcHaystack[i];
-                return (char*)pc;
-            }
+        }
+        /* ask how to increment a const pointer */
+        if (j == needleLen) {
+            pc = &pcHaystack[i];
+            return (char*)pc;
+        }
    }
    return NULL;
 }
