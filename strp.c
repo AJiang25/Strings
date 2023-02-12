@@ -24,6 +24,7 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
       pcSrc++;
       pcDest++;
    }
+   *pcDest = '\0';
    return pcDest;
 }
 
