@@ -19,11 +19,7 @@ size_t Str_getLength(const char *pcSrc)
 char *Str_copy(char *pcDest, const char *pcSrc) {
    assert(pcSrc != NULL);
    assert(pcDest != NULL);
-   while (*pcSrc != '\0') {
-      *pcDest = *pcSrc;
-      pcSrc++;
-      pcDest++;
-   }
+   for(; (*pcDest = *pcSrc) != '\0'; pcSrc++, pcDest++);
    *pcDest = '\0';
    return pcDest;
 }
