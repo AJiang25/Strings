@@ -177,6 +177,7 @@ static void testCopy(void)
       printf("\n");
       printf(acSrc);
       printf("\n");
+      printf("\n");
       printf(pcResult);
       ASSURE(pcResult == acDest1);
       (void)strcpy(acDest2, acSrc);
