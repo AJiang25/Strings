@@ -20,6 +20,15 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
+   size_t count;
+   assert(pcLine != NULL);
+   assert(pcFrom != NULL);
+   assert(pcTo != NULL);
+   if (Str_getLength(pcLine) == 0) {
+      return 0;
+   }
+   
+   
    /* Insert your code here. */
 }
 
