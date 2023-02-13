@@ -519,6 +519,7 @@ static void testSearch(void)
       printf(pcResult1);
       printf("\n");
       printf(pcResult2);
+      printf("\n");
       ASSURE(pcResult1 == pcResult2);
    }
 
