@@ -17,7 +17,7 @@ char *Str_copy(char pcDest[], const char pcSrc[]);
 
 /* Concats string pcSrc with string pcDest. Returns a char pointer
 to pcDest. */
-char * Str_concat(char pcDest[], const char pcSrc[]);
+char *Str_concat(char pcDest[], const char pcSrc[]);
 
 /* compares string Str1 with string Str2. Returns 0 if there is no
 difference, else returns an int value other than 0 */

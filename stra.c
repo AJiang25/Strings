@@ -78,7 +78,6 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
                 break;
             }
         }
-        /* ask how to increment a const pointer */
         if (j == needleLen) {
             pc = &pcHaystack[i];
             return (char*)pc;

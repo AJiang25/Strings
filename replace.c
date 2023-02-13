@@ -11,9 +11,13 @@
 /*--------------------------------------------------------------------*/
 
 /* If pcFrom is the empty string, then write string pcLine to stdout
-   and return 0.  Otherwise write string pcLine to stdout with each
+   and return 0.  
+   
+   Otherwise write string pcLine to stdout with each
    distinct occurrence of string pcFrom replaced with string pcTo,
-   and return a count of how many replacements were made.  Make no
+   and return a count of how many replacements were made.  
+   
+   Make no
    assumptions about the maximum number of replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
@@ -27,6 +31,7 @@ static size_t replaceAndWrite(const char *pcLine,
    if (Str_getLength(pcLine) == 0) {
       return 0;
    }
+
    
    
    /* Insert your code here. */

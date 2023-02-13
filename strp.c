@@ -79,23 +79,18 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    if (needleLen == 0) {
         return (char*)pc;
    }
-
-/*
-for (i = 0; i < haystackLen; i++) {
+   for (i = 0; i < haystackLen; i++) {
         size_t j;
         for (j = 0; j < needleLen; j++) {
-            if (pcHaystack[i + j] != pcNeedle[j]) {
+            if (*pcHaystack != *pcNeedle) {
                 break;
             }
+            pcHaystack++;
         }
-         ask how to increment a const pointer 
         if (j == needleLen) {
             pc = &pcHaystack[i];
             return (char*)pc;
         }
    }
-*/
-
-
    return NULL;
 }
