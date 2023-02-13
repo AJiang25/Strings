@@ -175,11 +175,11 @@ static void testCopy(void)
       int i;
       for(i = 0; i< Str_getLength(acDest1); i++)
       {
-         printf(acDest1[i]);
+         print(acDest1[i]);
       }
       for(i = 0; i< Str_getLength(acSrc); i++)
       {
-         printf(acSrc[i]);
+         print(acSrc[i]);
       }
       pcResult = Str_copy(acDest1, acSrc);
       ASSURE(pcResult == acDest1);
