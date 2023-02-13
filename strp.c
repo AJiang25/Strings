@@ -82,10 +82,10 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    for (i = 0; i < haystackLen; i++) {
         size_t j;
         for (j = 0; j < needleLen; j++) {
-            if (*pcHaystack != *pcNeedle) {
+            if (*pc != *pcNeedle) {
                 break;
             }
-            pcHaystack++;
+            pc++;
         }
         if (j == needleLen) {
             pc = &pcHaystack[i];
