@@ -86,7 +86,7 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
             pc++;
             pcNeedle++;
          }
-         return pc;
+         return (char*)pc;
       }
       if (*pc != *pcNeedle) {
          pc++;
