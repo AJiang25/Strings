@@ -31,17 +31,19 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
 }
 
 char *Str_concat(char* pcDest, const char* pcSrc) {
+   char *pcTmp;
+   pcTmp = pcDest;
    assert(pcSrc != NULL);
    assert(pcDest != NULL);
-   while (*pcDest != '\0') {
-      pcDest++;
+   while (*pcTmp != '\0') {
+      pcTmp++;
    } 
    while (*pcSrc != '\0') {
-      *pcDest = *pcSrc;
-      pcDest++;
+      *pcTmp = *pcSrc;
+      pcTmp++;
       pcSrc++;
    }
-   *pcDest = '\0';
+   *pcTmp = '\0';
    return pcDest;
 }
 
