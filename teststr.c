@@ -513,12 +513,12 @@ static void testSearch(void)
       pcResult1 = Str_search(acHaystack, acNeedle);
       pcResult2 = strstr(acHaystack, acNeedle);
       printf(acHaystack);
-      print("\n");
-      print (acNeedle);
-      print("\n");
-      print(pcResult1);
-      print("\n");
-      print(pcResult2);
+      printf("\n");
+      printf(acNeedle);
+      printf("\n");
+      printf(pcResult1);
+      printf("\n");
+      printf(pcResult2);
       ASSURE(pcResult1 == pcResult2);
    }
 
