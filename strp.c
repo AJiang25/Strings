@@ -90,10 +90,9 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
       if (*pc != *pcNeedle) {
          pc++;
       }
-      if (j == needleLen) {
+      if (i == haystackLen) {
             return (char*)pc;
-        }
-
+      }
    }
    return NULL;
 }
