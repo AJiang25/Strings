@@ -82,7 +82,7 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    while (*pc != '\0') {
       const char *pcTmp = pc;
       const char *pcNeed = pcNeedle;
-      while (*pcNeed == *pcTmp && *pcNeed != '\n' && *pcTmp != '\n') {
+      while (*pcNeed == *pcTmp) {
          pcNeed++;
          pcTmp++;
       }
