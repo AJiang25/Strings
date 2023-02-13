@@ -86,11 +86,14 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
             pc++;
             pcNeedle++;
          }
-         return (char*)pc;
       }
       if (*pc != *pcNeedle) {
          pc++;
       }
+      if (j == needleLen) {
+            return (char*)pc;
+        }
+
    }
-      return NULL;
-   }
+   return NULL;
+}
