@@ -512,7 +512,7 @@ static void testSearch(void)
       const char acNeedle[] = "d";
       pcResult1 = Str_search(acHaystack, acNeedle);
       pcResult2 = strstr(acHaystack, acNeedle);
-      print(acHaystack);
+      printf(acHaystack);
       print("\n");
       print (acNeedle);
       print("\n");
