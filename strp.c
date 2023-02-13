@@ -73,6 +73,7 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    const char* pc = pcHaystack;
    size_t i;
    size_t j;
+   size_t count;
    size_t haystackLen = Str_getLength(pcHaystack);
    size_t needleLen = Str_getLength(pcNeedle);
    assert(pcHaystack != NULL);
@@ -81,16 +82,18 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
         return (char*)pc;
    }
    for (i = 0; i < haystackLen; i++) {
+      count = 0;
       for (j = 0; j < needleLen; j++) {
          while (*pc == *pcNeedle) {
             pc++;
             pcNeedle++;
+            count++;
          }
       }
       if (*pc != *pcNeedle) {
          pc++;
       }
-      if (i == haystackLen) {
+      if (count == needleLen) {
             return (char*)pc;
       }
    }
