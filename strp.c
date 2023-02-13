@@ -25,7 +25,7 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
       pcDest++;
    }
    *pcDest = '\0';
-   return pcDest;
+   return *pcDest;
 }
 
 char *Str_concat(char* pcDest, const char* pcSrc) {
