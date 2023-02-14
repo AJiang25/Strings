@@ -74,11 +74,9 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    size_t needleLen = Str_getLength(pcNeedle);
    assert(pcHaystack != NULL);
    assert(pcNeedle != NULL);
-
    if (needleLen == 0) {
         return (char*)pc;
    }
-
    while (*pc != '\0') {
       const char *pcTmp = pc;
       const char *pcNeed = pcNeedle;
