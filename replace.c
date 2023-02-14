@@ -26,15 +26,16 @@ static size_t replaceAndWrite(const char *pcLine,
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
    len = Str_getLength(pcFrom);
-   /* if (Str_getLength(pcLine) == 0) {
-      printf(pcLine);
+   /* Accounts for the corner case of when pcFrom is an empty string */
+   if (Str_getLength(pcFrom) == 0) {
+      printf("%s", pcLine);
       return 0;
-   } */
+   }
+   /* */
    while (*pcLine != '\0') {
-      if (*pcLine == *Str_search(pcFrom, pcTo)) {
+      if (*pcLine == *Str_search(pcLine, pcFrom)) {
          printf("%s", pcTo);
          count++;
-         
       }
       putchar(*pcLine);
       pcLine++;
