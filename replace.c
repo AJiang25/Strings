@@ -23,6 +23,7 @@ static size_t replaceAndWrite(const char *pcLine,
    size_t count;
    size_t len; 
    const char *pcTmp;
+   const char *pc;
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
@@ -37,7 +38,7 @@ static size_t replaceAndWrite(const char *pcLine,
    while (*pcLine != '\0') {
       /*points to the beginning of pcFrom every iteration*/
       pcTmp = pcFrom;
-      char *pc = Str_search(pcLine, pcFrom); 
+      pc = Str_search(pcLine, pcFrom); 
       /* prints until pc */
       while (*pcLine != *pc) {
          putchar(*pcLine);
