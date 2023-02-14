@@ -29,10 +29,10 @@ static size_t replaceAndWrite(const char *pcLine,
    }
    while (*pcLine != '\0') {
       if (*pcLine == *Str_search(pcFrom, pcTo)) {
-         printf(pcTo);
+         putchar(*pcTo);
          count++;
       }
-      printf(pcLine);
+      putchar(*pcLine);
       pcLine++;
    }
    return count;
