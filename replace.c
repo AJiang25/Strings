@@ -21,16 +21,20 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
    size_t count;
+   size_t len;
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
-   if (Str_getLength(pcLine) == 0) {
+   len = Str_getLength(pcFrom);
+   /* if (Str_getLength(pcLine) == 0) {
+      printf(pcLine);
       return 0;
-   }
+   } */
    while (*pcLine != '\0') {
       if (*pcLine == *Str_search(pcFrom, pcTo)) {
          printf("%s", pcTo);
          count++;
+         
       }
       putchar(*pcLine);
       pcLine++;
