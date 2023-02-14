@@ -34,7 +34,7 @@ static size_t replaceAndWrite(const char *pcLine,
       const char* pc = Str_search(pcLine, pcFrom); 
       /* for every s in sss, replace with m to get mmm*/
       /* prints until pc */
-      while (*pcLine != pc) {
+      while (*pcLine != *pc) {
          putchar(*pcLine);
          pcLine++;
       }
