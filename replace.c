@@ -32,7 +32,6 @@ static size_t replaceAndWrite(const char *pcLine,
    /* prints up to pc, prints pcTo, skips pcFrom, repeats */
    while (*pcLine != '\0') {
       const char* pc = Str_search(pcLine, pcFrom); 
-      /* for every s in sss, replace with m to get mmm*/
       /* prints until pc */
       while (*pcLine != *pc) {
          putchar(*pcLine);
@@ -80,9 +79,12 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
-
+   /* If argv[1] is the empty string, then write each line of stdin to
+   stdout, write a message to stderr indicating that 0 replacements
+   were made, and return 0.*/
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
+      uReplaceCount = replaceAndWrite(acLine, pcFrom, pcTo);
+   }
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
 }
