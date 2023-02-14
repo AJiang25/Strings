@@ -34,16 +34,24 @@ static size_t replaceAndWrite(const char *pcLine,
       printf("%s", pcLine);
       return 0;
    }
+
    /* prints up to pc, prints pcTo, skips pcFrom, repeats */
    while (*pcLine != '\0') {
-      /*points to the beginning of pcFrom every iteration*/
+
+      /*points to the beginning of pcFrom every iteration 
+      & searches for next result*/
       pcTmp = pcFrom;
-      pc = Str_search(pcLine, pcFrom); 
+      pc = Str_search(pcLine, pcFrom);
+      if (pc = NULL) {
+         printf("%s", pcLine);
+      }
+
       /* prints until pc */
       while (*pcLine != *pc) {
          putchar(*pcLine);
          pcLine++;
       }
+
       /* prints pcTo & then skips pcFrom*/
       printf("%s", pcTo);
       count++;
@@ -88,6 +96,7 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) 
+   /* My code for calling the replaceAndWrite function*/
    uReplaceCount = replaceAndWrite(acLine, pcFrom, pcTo);
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
