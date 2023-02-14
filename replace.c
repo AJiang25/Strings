@@ -28,11 +28,11 @@ static size_t replaceAndWrite(const char *pcLine,
       return 0;
    }
    while (*pcLine != '\0') {
-      if (*pcLine == Str_search(*pcFrom, *pcTo)) {
+      if (*pcLine == *Str_search(pcFrom, pcTo)) {
          printf(pcTo);
          count++;
       }
-      printf(*pcLine);
+      printf(pcLine);
       pcLine++;
    }
    return count;
