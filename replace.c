@@ -29,14 +29,22 @@ static size_t replaceAndWrite(const char *pcLine,
       printf("%s", pcLine);
       return 0;
    }
-   /* */
+   /* prints up to pc, prints pcTo, skips pcFrom, repeats */
    while (*pcLine != '\0') {
-      if (*pcLine == *Str_search(pcLine, pcFrom)) {
+      const char* pc;
+      /* for every s in sss, replace with m to get mmm*/
+      pc = *Str_search(pcLine, pcFrom); 
+      /* prints until pc */
+      while (*pcLine != pc) {
+         putchar(*pcLine);
+         pcLine++;
+      }
+      /* prints pcTo*/
+      while (*pcLine == *pcFrom) {
          printf("%s", pcTo);
          count++;
+         pcLine++;
       }
-      putchar(*pcLine);
-      pcLine++;
    }
    return count;
 }
