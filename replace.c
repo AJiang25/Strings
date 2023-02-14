@@ -42,8 +42,10 @@ static size_t replaceAndWrite(const char *pcLine,
       & searches for next result*/
       pcTmp = pcFrom;
       pc = Str_search(pcLine, pcFrom);
+      /*handles case in which there is no more search to be found*/
       if (pc == NULL) {
          printf("%s", pcLine);
+         break;
       }
 
       /* prints until pc */
