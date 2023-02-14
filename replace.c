@@ -21,11 +21,14 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
    size_t count;
+   size_t len; 
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
+   len = Str_getLength(pcFrom);
+   count = 0;
    /* Accounts for the corner case of when pcFrom is an empty string */
-   if (Str_getLength(pcFrom) == 0) {
+   if (len == 0) {
       printf("%s", pcLine);
       return 0;
    }
@@ -37,7 +40,7 @@ static size_t replaceAndWrite(const char *pcLine,
          putchar(*pcLine);
          pcLine++;
       }
-      /* prints pcTo*/
+      /* prints pcTo & then skips pcFrom*/
       while (*pcLine == *pcFrom) {
          printf("%s", pcTo);
          count++;
