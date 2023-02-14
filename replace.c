@@ -22,6 +22,7 @@ static size_t replaceAndWrite(const char *pcLine,
 {
    size_t count;
    size_t len; 
+   const char *pcTmp;
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
@@ -34,17 +35,20 @@ static size_t replaceAndWrite(const char *pcLine,
    }
    /* prints up to pc, prints pcTo, skips pcFrom, repeats */
    while (*pcLine != '\0') {
-      const char* pc = Str_search(pcLine, pcFrom); 
+      /*points to the beginning of pcFrom every iteration*/
+      pcTmp = pcFrom;
+      const char *pc = Str_search(pcLine, pcFrom); 
       /* prints until pc */
       while (*pcLine != *pc) {
          putchar(*pcLine);
          pcLine++;
       }
       /* prints pcTo & then skips pcFrom*/
-      while (*pcLine == *pcFrom) {
-         printf("%s", pcTo);
-         count++;
+      printf("%s", pcTo);
+      count++;
+      while (*pcLine == *pcTmp) {
          pcLine++;
+         pcTmp++;
       }
    }
    return count;
