@@ -66,9 +66,12 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
    assert(pcNeedle != NULL);
    haystackLen = Str_getLength(pcHaystack);
    needleLen = Str_getLength(pcNeedle);
+
+   /* corner case for when pcNeedle is empty, returns pcHaystack*/
    if (needleLen == 0) {
         return (char*) pcHaystack;
    }
+   
    for (i = 0; i < haystackLen; i++) {
         size_t j;
         for (j = 0; j < needleLen; j++) {

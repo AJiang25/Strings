@@ -47,28 +47,6 @@ char *Str_concat(char *pcDest, const char *pcSrc) {
    return pcDest;
 }
 
-/* size_t Str_compare(const char *Str2, const char *Str1) {
-   size_t str1Length = Str_getLength(Str1);
-   size_t str2Length = Str_getLength(Str2);
-   size_t max;
-   size_t i;
-   assert(Str2 != NULL);
-   assert(Str1 != NULL);
-   if (str1Length > str2Length) 
-      max = str1Length;
-   else
-      max = str2Length;
-   for (i = 0; i < max; i++){
-      size_t diff = (size_t) (*Str2 - *Str1);
-      Str2++;
-      Str1++;
-      if (diff != 0) {
-         return diff;
-      }
-   }
-   return 0;
-} */
-
 size_t Str_compare(const char *Str2, const char *Str1) {
     assert(Str2 != NULL);
     assert(Str1 != NULL);
@@ -83,21 +61,23 @@ size_t Str_compare(const char *Str2, const char *Str1) {
 }
 
 char *Str_search(const char *pcHaystack, const char *pcNeedle) {
-   const char *pc = pcHaystack;
-   size_t needleLen = Str_getLength(pcNeedle);
+   const char *pc;
+   size_t needleLen;
    assert(pcHaystack != NULL);
    assert(pcNeedle != NULL);
+   pc = pcHaystack;
+   needleLen = Str_getLength(pcNeedle);
+
+   /* corner case for when pcNeedle is empty, returns pcHaystack*/
    if (needleLen == 0) {
         return (char*)pc;
    }
+
    while (*pc != '\0') {
-      const char *pcTmp = pc;
-      const char *pcNeed = pcNeedle;
-      while (*pcNeed == *pcTmp && *pcNeed != '\0' && *pcTmp != '\0') {
-         pcNeed++;
-         pcTmp++;
-      }
-      if (*pcNeed == '\0') {
+      const char *pcTmp = pc; /* points to pc */
+      const char *pcNeed = pcNeedle; /* points to pcNeedle */
+
+      if (*pcNeedle == '\0') {
          return (char*) pc;
       }
       pc++;
