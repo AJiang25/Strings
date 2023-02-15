@@ -22,13 +22,13 @@ static size_t replaceAndWrite(const char *pcLine,
 {
    size_t count;
    size_t len; 
-   const char *pcTmp;
    const char *pc;
    assert(pcLine != NULL);
    assert(pcFrom != NULL);
    assert(pcTo != NULL);
    len = Str_getLength(pcFrom);
    count = 0;
+   
    /* Accounts for the corner case of when pcFrom is an empty string */
    if (len == 0) {
       printf("%s", pcLine);
@@ -40,7 +40,6 @@ static size_t replaceAndWrite(const char *pcLine,
 
       /*points to the beginning of pcFrom every iteration 
       & searches for next result*/
-      pcTmp = pcFrom;
       pc = Str_search(pcLine, pcFrom);
 
       /*handles case in which there is no more search to be found*/
@@ -59,10 +58,6 @@ static size_t replaceAndWrite(const char *pcLine,
       printf("%s", pcTo);
       count++;
       pcLine += len;
-      /*while (*pcLine == *pcTmp) {
-         pcLine++;
-         pcTmp++;
-      }*/
    }
    return count;
 }
