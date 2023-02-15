@@ -58,10 +58,11 @@ static size_t replaceAndWrite(const char *pcLine,
       /* prints pcTo & then skips pcFrom*/
       printf("%s", pcTo);
       count++;
-      while (*pcLine == *pcTmp) {
+      pcLine += len;
+      /*while (*pcLine == *pcTmp) {
          pcLine++;
          pcTmp++;
-      }
+      }*/
    }
    return count;
 }
