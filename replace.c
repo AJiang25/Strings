@@ -1,14 +1,14 @@
-/*--------------------------------------------------------------------*/
-/* replace.c                                                          */
-/* Author: Arnold Jiang                                                        */
-/*--------------------------------------------------------------------*/
+/*-------------------------------------------------------------------*/
+/* replace.c                                                         */
+/* Author: Arnold Jiang                                              */
+/*-------------------------------------------------------------------*/
 
 #include "str.h"
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
 
-/*--------------------------------------------------------------------*/
+/*-------------------------------------------------------------------*/
 
 /* If pcFrom is the empty string, then write string pcLine to stdout
    and return 0. Otherwise write string pcLine to stdout with each
@@ -62,7 +62,7 @@ static size_t replaceAndWrite(const char *pcLine,
    return count;
 }
 
-/*--------------------------------------------------------------------*/
+/*-------------------------------------------------------------------*/
 
 /* If argc is unequal to 3, then write an error message to stderr and
    return EXIT_FAILURE.  Otherwise...

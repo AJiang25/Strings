@@ -18,9 +18,9 @@ size_t Str_getLength(const char *pcSrc)
 
 char *Str_copy(char *pcDest, const char *pcSrc) {
    char *pcTmp;
-   pcTmp = pcDest;
    assert(pcSrc != NULL);
    assert(pcDest != NULL);
+   pcTmp = pcDest;
    while (*pcSrc != '\0') {
       *pcTmp = *pcSrc;
       pcSrc++;
@@ -30,11 +30,11 @@ char *Str_copy(char *pcDest, const char *pcSrc) {
    return pcDest;
 }
 
-char *Str_concat(char* pcDest, const char* pcSrc) {
+char *Str_concat(char *pcDest, const char *pcSrc) {
    char *pcTmp;
-   pcTmp = pcDest;
    assert(pcSrc != NULL);
    assert(pcDest != NULL);
+   pcTmp = pcDest;
    while (*pcTmp != '\0') {
       pcTmp++;
    } 
@@ -47,7 +47,7 @@ char *Str_concat(char* pcDest, const char* pcSrc) {
    return pcDest;
 }
 
-size_t Str_compare(const char* Str2, const char* Str1) {
+size_t Str_compare(const char *Str2, const char *Str1) {
    size_t str1Length = Str_getLength(Str1);
    size_t str2Length = Str_getLength(Str2);
    size_t max;
@@ -67,7 +67,7 @@ size_t Str_compare(const char* Str2, const char* Str1) {
       }
    }
    return 0;
-}
+} 
 
 char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    const char *pc = pcHaystack;
