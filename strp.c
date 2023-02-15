@@ -47,7 +47,7 @@ char *Str_concat(char *pcDest, const char *pcSrc) {
    return pcDest;
 }
 
-size_t Str_compare(const char *Str2, const char *Str1) {
+/* size_t Str_compare(const char *Str2, const char *Str1) {
    size_t str1Length = Str_getLength(Str1);
    size_t str2Length = Str_getLength(Str2);
    size_t max;
@@ -67,7 +67,21 @@ size_t Str_compare(const char *Str2, const char *Str1) {
       }
    }
    return 0;
-} 
+} */
+
+size_t Str_compare(const char *Str2, const char *Str1) {
+    int i; 
+    assert(Str2 != NULL);
+    assert(Str1 != NULL);
+    while(*Str2 == *Str1) {
+        if (*Str2 == '\0') {
+            return 0;
+        }
+        Str2++;
+        Str1++;
+    }
+    return Str2[i] - Str1[i];
+}
 
 char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    const char *pc = pcHaystack;

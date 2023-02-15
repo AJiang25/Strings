@@ -46,27 +46,6 @@ char *Str_concat(char pcDest[], const char pcSrc[]) {
     return pcDest;
 }
 
-/*size_t Str_compare(const char Str2[], const char Str1[]) {
-    size_t str1Length;
-    size_t str2Length;
-    size_t max;
-    size_t i;
-    assert(Str2 != NULL);
-    assert(Str1 != NULL);
-    str1Length = Str_getLength(Str1);
-    str2Length = Str_getLength(Str2);
-    if (str1Length > str2Length) 
-        max = str1Length;
-    else
-        max = str2Length;
-    for (i = 0; i < max; i++){
-        size_t diff = (size_t) (Str2[i] - Str1[i]);
-        if (diff != 0) {
-            return diff;
-        }
-    }
-    return 0;
-}*/
 size_t Str_compare(const char Str2[], const char Str1[]) {
     int i; 
     assert(Str2 != NULL);
