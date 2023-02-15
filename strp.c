@@ -70,7 +70,6 @@ char *Str_concat(char *pcDest, const char *pcSrc) {
 } */
 
 size_t Str_compare(const char *Str2, const char *Str1) {
-    int i; 
     assert(Str2 != NULL);
     assert(Str1 != NULL);
     while(*Str2 == *Str1) {
