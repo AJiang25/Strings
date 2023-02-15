@@ -55,7 +55,7 @@ size_t Str_compare(const char Str2[], const char Str1[]) {
             return 0;
         }
     }
-    return Str2[i] - Str1[i];
+    return (size_t) (Str2[i] - Str1[i]);
 }
 
 char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
