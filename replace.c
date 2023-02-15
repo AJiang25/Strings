@@ -42,6 +42,7 @@ static size_t replaceAndWrite(const char *pcLine,
       & searches for next result*/
       pcTmp = pcFrom;
       pc = Str_search(pcLine, pcFrom);
+
       /*handles case in which there is no more search to be found*/
       if (pc == NULL) {
          printf("%s", pcLine);
@@ -99,7 +100,7 @@ int main(int argc, char *argv[])
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) 
    /* My code for calling the replaceAndWrite function*/
-   uReplaceCount = replaceAndWrite(acLine, pcFrom, pcTo);
+   uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
 }
