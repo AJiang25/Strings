@@ -50,7 +50,7 @@ static size_t replaceAndWrite(const char *pcLine,
       }
 
       /* prints until pc */
-      while (*pcLine != *pc) {
+      while (pcLine != pc) {
          putchar(*pcLine);
          pcLine++;
       }
