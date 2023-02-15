@@ -12,7 +12,31 @@ in the "Policies" web page (also available on armlab in the file
 ~cos217/AuthorizedSourcesList ) to this section of the readme file,
 and edit it as appropriate.
 
+The course's lectures.
 
+The course's precepts.
+
+The course's website.
+
+Documents that are referenced directly by the course's website. Such documents include the course's lecture slides and precept handouts.
+
+The course's textbooks.
+
+The man pages on the armlab cluster.
+
+The course's current staff members outside of class time through office hours.
+
+The course's current staff members outside of class time through meetings.
+
+The course's current staff members outside of class time through Ed.
+
+The course's current staff members outside of class time through e-mail.
+
+Current Intro Lab TAs through visits to the Intro COS Lab.
+Austin - COS 217 Lab Ta
+Kaan - COS 217 Lab Ta
+Emlio - COS 217 Lab Ta
+Manya - COS 217 Lab Ta
 
 ------------------------------------------------------------------------
 What unauthorized sources of information did you use to complete the
@@ -26,16 +50,15 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
-
-Austin - COS 217 Lab Ta
-Kaan - COS 217 Lab Ta
-Emlio - COS 217 Lab Ta
-Manya - COS 217 Lab Ta
+None
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+I struggled a lot to figure out the replaceAndWrite function, but 
+looking at the man pages for the strings functions was very helpful
+in learning more about pointers and building a fundamental 
+understanding of c programming
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
@@ -50,7 +73,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on stra.c, and what are your
@@ -58,7 +81,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does splint generate on strp.c, and what are your
@@ -66,7 +89,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on strp.c, and what are your
@@ -74,7 +97,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does splint generate on replace.c, and what are your
