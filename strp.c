@@ -81,10 +81,10 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
       while (*pcNeed == *pcHay && *pcNeed != '\0' && *pcHay != '\0') {
          pcNeed++;
          pcHay++;
-         /* when *pcNeedle hits '\0', return pc */
-         if (*pcNeedle == '\0') {
+      }
+      /* when *pcNeedle hits '\0', return pc */
+      if (*pcNeed == '\0') {
             return (char*) pc;
-         }
       }
       pc++;
    }
