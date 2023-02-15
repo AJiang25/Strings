@@ -74,14 +74,17 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
    }
 
    while (*pc != '\0') {
-      const char *pcTmp = pc; /* points to pc */
-      const char *pcNeed = pcNeedle; /* points to pcNeedle */
-      if (*pcNeedle == '\0') {
-         return (char*) pc;
-      }
-      while (*pcNeed == *pcTmp && *pcNeed != '\0' && *pcTmp != '\0') {
+      const char *pcHay = pc; 
+      const char *pcNeed = pcNeedle; 
+
+      /* increments pcNeed and pcHay */
+      while (*pcNeed == *pcHay && *pcNeed != '\0' && *pcHay != '\0') {
          pcNeed++;
-         pcTmp++;
+         pcHay++;
+         /* when *pcNeedle hits '\0', return pc */
+         if (*pcNeedle == '\0') {
+            return (char*) pc;
+         }
       }
       pc++;
    }
