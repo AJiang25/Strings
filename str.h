@@ -6,6 +6,7 @@
 #ifndef STR_INCLUDED
 #define STR_INCLUDED
 #include <stddef.h>
+#include <assert.h>
 
 /* Returns the length of string pcSrc. pcSrc is the source array 
 of characters. */

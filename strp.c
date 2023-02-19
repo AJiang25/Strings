@@ -4,10 +4,8 @@
 /*-------------------------------------------------------------------*/
 
 #include "str.h"
-#include <assert.h>
 
-size_t Str_getLength(const char *pcSrc)
-{
+size_t Str_getLength(const char *pcSrc) {
    const char *pcEnd;
    assert(pcSrc != NULL);
    pcEnd = pcSrc;
