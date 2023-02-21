@@ -122,6 +122,14 @@ Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
+No, since the functions Str_copy and Str_concat do not know the 
+lengths of the parameters, it is not possible to call assert to verify
+that the destination memory area is large enough. Although one may be
+able to compare the lengths of the the parameters using function calls,
+the assert function must be called before any variable declarations,
+making it not possible to access the lengths of the parameters since
+they are just pointers.
+
 
 
 ------------------------------------------------------------------------
