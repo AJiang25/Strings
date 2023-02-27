@@ -128,8 +128,7 @@ that the destination memory area is large enough. Although one may be
 able to compare the lengths of the the parameters using function calls,
 the assert function must be called before any variable declarations,
 making it not possible to access the lengths of the parameters since
-they are just pointers.
-
-
-
+they are just pointers. Using the sizeof function on a call to a string
+such as sizeof(*pc) will only return the size of the first char in 
+a string.
 ------------------------------------------------------------------------

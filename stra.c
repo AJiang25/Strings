@@ -70,7 +70,7 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
    if (needleLen == 0) {
         return (char*) pcHaystack;
    }
-   
+   /* searches through pcHaystack for a match with pcNeedle*/
    for (i = 0; i < haystackLen; i++) {
         size_t j;
         for (j = 0; j < needleLen; j++) {
@@ -78,6 +78,7 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
                 break;
             }
         }
+        /*returns a pointer to the address when a match is found*/
         if (j == needleLen) {
             return (char*) &pcHaystack[i];
         }
